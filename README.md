@@ -1,3 +1,6 @@
+> [!CAUTION]
+> The content of this repository are related with the use of an adult themed toy with the explicit purpouse of inflicting pain. Viewer discretion is advised.
+
 # PiShockTheSpire
 
 Source code for the PiShockTheSpire mod.
