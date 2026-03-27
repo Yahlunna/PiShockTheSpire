@@ -1,24 +1,16 @@
 [
   {
-    "PROPER_NAME": "This is displayed in the tooltip.",
+    "PROPER_NAME": "Safeword",
     "NAMES": [
-      "these",
-      "are",
-      "detected",
-      "in",
-      "the",
-      "text",
       "Safeword"
     ],
-    "DESCRIPTION": "This is displayed in the tooltip. Spaces should not be used be avoided in NAMES, with the exception of multi-word keywords (see next entry)."
+    "DESCRIPTION": "Disables upcoming PiShock zap requests."
   },
   {
-    "PROPER_NAME": "Multiword Keyword",
+    "PROPER_NAME": "Depreciated",
     "NAMES": [
-      "multiword keyword",
-      "multiword_keyword",
-      "multiword_keywords"
+      "depreciated"
     ],
-    "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
+    "DESCRIPTION": "Due to the new PiShock API Update, old [#0000FF]sharecodes[] have been replaced with [#00FF00]ShockerIDs[]! NL NL (To fix this issue, abandon this run, regenerate your [#FFED29]pishockconfig.txt[] file and reconfigure it with your [#00FF00]ShockerID[]) NL NL Visit the PiShockTheSpire mod page in the Workshop for more info."
   }
 ]

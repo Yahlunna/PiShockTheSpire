@@ -125,7 +125,7 @@ public class PiShockCollar extends BaseRelic {
     public void triggerPiShocker(){
         this.flash();
         triggerPiShockCollar(calculateZapOutput(), calculateZapDuration());
-        logger.info("Zapped! Pishock trigered with a power of {}% for a length of {} seconds.", calculateZapOutput(), calculateZapDuration());
+        logger.info("Zapped! PiShock triggered with a power of {}% for a length of {} seconds.", calculateZapOutput(), calculateZapDuration());
     }
 
 

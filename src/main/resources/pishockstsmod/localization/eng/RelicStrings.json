@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "At the start of each combat, add a #ySafeword into your hand. Character damage is now shared with the player."
     ]
+  },
+  "${modID}:WarningErrorRelic": {
+    "NAME": "WARNING: API Update!",
+    "FLAVOR": "Visit the Workshop's mod page for additional information!",
+    "DESCRIPTIONS": [
+      "Your [#FFED29]pishockconfig.txt[] file uses a #y${modID}:Depreciated [#0000FF]sharecode[] and will not work! NL"
+    ]
   }
 }

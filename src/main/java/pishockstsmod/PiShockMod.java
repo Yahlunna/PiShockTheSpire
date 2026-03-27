@@ -58,6 +58,8 @@ public class PiShockMod implements
     public static int MINIMUM_PIZAP_LENGTH = 1;
     public static int MAXIMUM_PIZAP_LENGTH = 8;
 
+    public static boolean OLD_SHARECODE_DETECTED = false;
+
     public static boolean INVALID_PISHOCK_DATA = false;
 
     //This is used to prefix the IDs of various objects like cards and relics,
@@ -299,8 +301,14 @@ public class PiShockMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> relicsToAdd) {
-        relicsToAdd.add("pishockthespire:PiShockCollar");
-        UnlockTracker.markRelicAsSeen("pishockthespire:PiShockCollar");
+        if(!OLD_SHARECODE_DETECTED) {
+            relicsToAdd.add("pishockthespire:PiShockCollar");
+            UnlockTracker.markRelicAsSeen("pishockthespire:PiShockCollar");
+        }
+        else{
+            relicsToAdd.add("pishockthespire:WarningErrorRelic");
+            UnlockTracker.markRelicAsSeen("pishockthespire:WarningErrorRelic");
+        }
     }
 
 
@@ -392,9 +400,15 @@ public class PiShockMod implements
                             case "maxTime":
                                 MAXIMUM_PIZAP_LENGTH = Integer.parseInt(splitline[1]);
                                 break;
+                            case "sharecode":
+                                OLD_SHARECODE_DETECTED = true;
+                                logger.info("PiShockConfig contains an invalid field! (Sharecodes have been depreciated).");
+                                logger.info("Please check your pishockconfig.txt has been updated with the new PiShock API requirement fields (You will need a ShockedID from now on).");
+                                logger.info("TIP: Deleting pishockconfig.txt and regenerating it again by relaunching the game should result in a valid, up to date config file.");
+                                break;
                             default:
-                                logger.info("PiShockConfig contains an invalid field! Please check your pishockconfig.txt has been updated with the new PiShock API requirement fields (Sharecodes are no longer needed, use your shockerID instead)");
-                                logger.info("TIP: Deleting pishockconfig.txt and regenerating it again by relaunching the game should result in a valid, up to date config file");
+                                logger.info("PiShockConfig contains an invalid field!");
+                                logger.info("TIP: Deleting pishockconfig.txt and regenerating it again by relaunching the game should result in a valid, up to date config file.");
                                 break;
                         }
                     }
@@ -441,7 +455,7 @@ public class PiShockMod implements
 
                     con.setDoOutput(true);
 
-                    String jsonInputString = "{\"AgentName\":\"PiShockTheSpire\",\"Operation\": 0,\"Duration\": " + durationToSend + ",\"Intensity\": " + powerToSend + "}";
+                    String jsonInputString = "{\"AgentName\":\"PiShockTheSpire\",\"Operation\": 0,\"Duration\": " + (durationToSend*1000) + ",\"Intensity\": " + powerToSend + ",\"IntensityAsPercentage\": true}";
 
                     logger.info(jsonInputString);
 
