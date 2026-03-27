@@ -56,13 +56,11 @@ public class PiShockCollar extends BaseRelic {
             hitsTaken = Math.min(3, MAXIMUM_PIZAP_DAMAGE);
             triggerPiShocker();
             resetDamageTaken();
-
         }
     }
 
     @Override
     public void atTurnStart() {
-        logger.info("Magic number equals " + piShockModifier);
         damageTaken *= piShockModifier;
         if(damageTaken > 0){
             triggerPiShocker();
@@ -127,7 +125,7 @@ public class PiShockCollar extends BaseRelic {
     public void triggerPiShocker(){
         this.flash();
         triggerPiShockCollar(calculateZapOutput(), calculateZapDuration());
-        //logger.info("Zapped! Pishock trigered with a power of {}% for a length of {} seconds.", calculateZapOutput(), calculateZapDuration());
+        logger.info("Zapped! Pishock trigered with a power of {}% for a length of {} seconds.", calculateZapOutput(), calculateZapDuration());
     }
 
 

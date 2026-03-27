@@ -12,6 +12,6 @@
   "${modID}:Safeword": {
     "NAME": "Safeword",
     "DESCRIPTION": "Retain. NL Disable PiShock NL this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Duplicate PiShock's NL power output NL this turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Disable PiShock NL this turn."
   }
 }
