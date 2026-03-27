@@ -11,12 +11,22 @@ Source code for the PiShockTheSpire mod.
 
 ## Description
 
+> [!WARNING]
+> PSA - Api Migration update: The old PiShock API this mod used to rely on has been depreciated.
+> The mod has been updated to the new official PiShock API instead.
+> 
+> If 'PiShock The Spire' has stopped working for you, you should be able to fix it by deleting your old 'pishockconfig.txt' file and regenerating it again (You can do this by simply running Modded StS with 'Pishock The Spire' enabled after you deleted the old file).
+>
+> The new API relies on Shocker IDs, not sharecodes. Just type in the new shockerid field that will appear in the new updated 'pishockconfig.txt' file your PiShock Shocker ID, and fill all other fields as you would do normally. This should fix the issue.
+> 
+> You can find your Shockers IDs in the PiShock Website! Keep in mind that your HubID and your ShockerID are different things! You can open a guide on how to find your Shocker ID by clicking [here](https://i.imgur.com/XUZwmCd.png).
+
 Unofficial, fan-made, beta PiShock integration with Slay The Spire.
 
 At the start of your run, obtain a relic that will trigger a PiShock discharge every* time you take damage in game.
 The power output and duration of the discharge will rely on the amount of damage taken relative to your Max HP and numbers of hits taken.
 
-In addition to that, you will also be granted a Safeword at the start of each combat to disable zaps for one turn. Think carefully of when you should use it... and don't upgrade it, or you will find yourself with a shocking surprise in your hands ;3c
+In addition to that, you will also be granted a Safeword at the start of each combat to disable zaps for one turn. Think carefully of when you should use it... 
 
 Dying or abandoning a run will trigger a max intensity-duration discharge, even if you manage to disable or lose the relic. Defeat always hurts!
 
@@ -41,12 +51,13 @@ Dying or abandoning a run will trigger a max intensity-duration discharge, even 
 
 - 2.2) Localize the file 'pishockconfig.txt' and open it. (If you cant locate it, make sure you run the game with PiShockTheSpire enabled at least once - Step 1.2).
 
-- 2.3) Edit the file with your PiShock Username, API code, and your Sharecode for this play session (For your Sharecode, use just the code, not the full link). If you have tweaked with the Slay The Spire official Twitch integration before, this file works in similar fashion to 'twitchconfig.txt'. A properly configured file should look similar to this:
+- 2.3) Edit the file with your PiShock Username, API code, and your Shocker ID. You can open a guide on how to find your Shocker ID by clicking [here](https://i.imgur.com/XUZwmCd.png).
+If you have tweaked with the Slay The Spire official Twitch integration before, this file works in similar fashion to 'twitchconfig.txt'. A properly configured file should look similar to this:
 
 ```
 username=puppy73
 apikey=5c678926-d19e-4f86-42ad-21f5a76126db
-sharecode=17519CD8GAP
+shockerid=17519
 ```
 - 2.4) You can also configure the listed parameters to adjust the zap power and duration range to your liking. Make sure these ranges are within your sharecode safety limits, or you will not get zapped on requests overstepping these. You will also not get zapped if the values introduced here do not make sense (e.g: maxPower being smaller than minPower).
 
